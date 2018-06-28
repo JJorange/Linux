@@ -10,6 +10,7 @@
 typedef struct sockaddr sockaddr ;
 typedef struct sockaddr_in sockaddr_in;
 
+
 //一次从socket中读取一行数据
 //把数据放到buf缓冲区中
 //如果读取失败，返回值为-1
@@ -65,6 +66,7 @@ int Splist(char input[],const char* split_char,char* output[],int output_size){
 	return i;
 }
 
+
 int ParseFirstLine(char fisr_line[],char** p_url,char** p_methon){
 	//把首行按照空格进行字符串切分
 	char* tok[10];
@@ -82,6 +84,7 @@ int ParseFirstLine(char fisr_line[],char** p_url,char** p_methon){
 	return 0;
 }
 
+
 int ParseQueryString(char* url,char** p_url_path,char** p_query_string){
 	   char* p = url;
 	   for(;*p != '\0';p++){
@@ -95,6 +98,7 @@ int ParseQueryString(char* url,char** p_url_path,char** p_query_string){
 	   *p_query_string = NULL;
 	   return 0;
 }
+
 
 int ParseHeader(int sock,int* content_length){   
 	   char buf[SIZE] = {0};
@@ -124,6 +128,7 @@ int ParseHeader(int sock,int* content_length){
 	   //4.如果不是就直接丢弃
 	   //5.读到空行，循环结束
 }
+
 
 
 //请求处理函数
@@ -187,6 +192,7 @@ END:
 }
 
 
+
 void* ThreadEntry(void* arg){
 	   int64_t new_sock = (int64_t)arg;
 	   //使用HandlerRequest函数进行完成具体的处理请求过程，
@@ -196,6 +202,7 @@ void* ThreadEntry(void* arg){
 	   HandlerRequest(new_sock);
 	   return NULL;
 }
+
 
 //服务器启动
 void HttpServerStart(const char* ip,short port){
