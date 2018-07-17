@@ -243,16 +243,6 @@ void HttpServerStart(const char* ip,short port){
 
 
 
-
-
-
-
-
-
-
-
-
-
 //./http_server [ip] [port]
 int main(int argc,char* argv[])
 {
