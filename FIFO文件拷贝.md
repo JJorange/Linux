@@ -1,5 +1,6 @@
 ### 写入管道
 ```c++
+
 #include<string.h>
 #include<stdio.h>
 #include<stdlib.h>
