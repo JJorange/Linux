@@ -44,7 +44,6 @@ ssize_t NoBlockRead(int fd, char* buf, int size) {
 ssize_t total_size = 0;
 for (;;) {
 ssize_t cur_size = read(fd, buf + total_size, 1024);
-比特科技
 total_size += cur_size;
 if (cur_size < 1024 || errno == EAGAIN) {
 break;
@@ -90,7 +89,6 @@ return 1;
 }
 ret = listen(listen_fd, 5);
 if (ret < 0) {
-比特科技
 perror("listen");
 return 1;
 }
