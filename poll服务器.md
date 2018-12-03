@@ -39,8 +39,6 @@ if (listen_fd < 0) {
 perror("socket");
 return 1;
 }
-poll⽰示例: 多路转接服务器(选学)
-比特科技
 int ret = bind(listen_fd, (struct sockaddr*)&addr, sizeof(addr));
 if (ret < 0) {
 perror("bind");
@@ -89,7 +87,6 @@ if (read_size < 0) {
 perror("read");
 continue;
 }
-比特科技
 if (read_size == 0) {
 printf("client say: goodbye\n");
 close(fd_list[i].fd);
@@ -130,7 +127,7 @@ if (fd < 0) {
 perror("socket");
 return 1;
 }
-比特科技
+
 int ret = connect(fd, (struct sockaddr*)&addr, sizeof(addr));
 if (ret < 0) {
 perror("connect");
